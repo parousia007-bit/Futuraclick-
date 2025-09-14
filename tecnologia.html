@@ -1,124 +1,81 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soluciones Tecnológicas - FuturaClick</title>
-    <meta name="description" content="Desarrollamos bots educativos, plataformas web y ofrecemos consultoría para la implementación de tecnología con propósito.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-scale:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        #main-header.header-solid { background-color: white; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link { color: #374151; }
+        #main-header.header-solid a.nav-link:hover { color: #2563EB; }
+        #main-header.header-solid .brand-text-special { color: #2563EB; }
+        #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        #main-header.header-glass a.nav-link { color: #D1D5DB; }
+        #main-header.header-glass a.nav-link:hover { color: #FFFFFF; }
+        #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+<body class="bg-gray-900 text-gray-200">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold text-gray-900">
-                    Futura<span class="text-blue-600">Click</span>
-                </a>
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="index.html#inicio" class="text-gray-700 hover:text-blue-600">Inicio</a>
-                    <a href="index.html#soluciones" class="text-gray-700 hover:text-blue-600">Soluciones</a>
+                    <a href="index.html#inicio" class="nav-link transition-colors">Inicio</a>
+                    <a href="index.html#soluciones" class="nav-link transition-colors">Soluciones</a>
                 </div>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="bg-blue-800 text-white pt-32 pb-20">
+        <section class="bg-gray-800 text-white pt-32 pb-20">
             <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold fade-in">Soluciones de Tecnología a la Medida</h1>
-                <p class="text-xl mt-4 max-w-3xl mx-auto text-blue-200 fade-in">Creamos las herramientas que tu visión educativa necesita para impactar y crecer en el mundo digital.</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold fade-in">Soluciones de Tecnología a la Medida</h1>
+                <p class="text-xl mt-4 max-w-3xl mx-auto text-gray-300 fade-in">Creamos las herramientas que tu visión educativa necesita para impactar y crecer en el mundo digital.</p>
             </div>
         </section>
-
-        <section class="py-20 bg-white">
+        <section class="py-20 bg-gray-900">
             <div class="container mx-auto px-6 space-y-24">
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Automatización con Bots Educativos</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Vamos más allá de la simple automatización. Diseñamos "asistentes digitales" que sirven a un propósito pedagógico. Sometemos la IA al mandato cultural para crear herramientas que no ofrecen atajos, sino que aceleran la investigación, personalizan el aprendizaje y liberan el valioso tiempo de los educadores.
-                        </p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Bots de tutoría y resolución de dudas 24/7.</li>
-                            <li>Automatización de procesos administrativos y de comunicación.</li>
-                            <li>Sistemas de gamificación para aumentar el compromiso.</li>
-                        </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Automatización con Bots Educativos</h2>
+                        <p class="text-gray-300 leading-relaxed mb-4">Diseñamos "asistentes digitales" que sirven a un propósito pedagógico para acelerar la investigación, personalizar el aprendizaje y liberar el valioso tiempo de los educadores.</p>
                     </div>
-                    <div class="fade-in">
+                    <div>
                         <img src="images/robot.jpg" alt="Un robot blanco sobre una superficie de madera" class="rounded-xl shadow-lg">
                     </div>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in md:order-2">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Desarrollo de Plataformas Web y Móviles</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            Tu institución no es un negocio más; es un ecosistema de aprendizaje. Por eso, no construimos simples páginas web, sino "jardines digitales" donde tu comunidad puede crecer. Creamos plataformas intuitivas, seguras y escalables que reflejan la excelencia de tu visión educativa en cada pixel.
-                        </p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Sitios web institucionales y portales educativos.</li>
-                            <li>Aulas virtuales y sistemas de gestión de aprendizaje (LMS).</li>
-                            <li>Aplicaciones móviles (APK) para un aprendizaje sin barreras.</li>
-                        </ul>
-                    </div>
-                    <div class="fade-in md:order-1">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Diseño de una página web en múltiples dispositivos" class="rounded-xl shadow-lg">
-                    </div>
                 </div>
-
-                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="fade-in">
-                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Implementación de Herramientas Digitales</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4">
-                            La mejor herramienta es la que se usa con sabiduría. Nuestro enfoque de consultoría no se basa en la última moda, sino en un análisis profundo de tu filosofía. Te ayudamos a discernir e implementar las tecnologías que realmente servirán a tu misión, capacitando a tu equipo para usarlas de forma que potencien el florecimiento humano.
-                        </p>
-                         <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Auditoría y diagnóstico tecnológico-pedagógico.</li>
-                            <li>Selección y configuración de software educativo.</li>
-                            <li>Planes de capacitación para docentes y administrativos.</li>
-                        </ul>
-                    </div>
-                    <div class="fade-in">
-                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop" alt="Persona experta configurando un sistema tecnológico" class="rounded-xl shadow-lg">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="py-20 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Listo para construir tu futuro digital?</h2>
-                <p class="text-lg text-gray-600 mb-8">Conversemos sobre cómo estas soluciones pueden adaptarse a tu proyecto.</p>
-                <a href="index.html#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors hover-scale">Contactar Ahora</a>
-            </div>
         </section>
     </main>
 
-    <footer class="bg-black text-white py-12">
-       <div class="container mx-auto px-6 text-center">
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
             <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
         </div>
     </footer>
+
     <script>
+        const header = document.getElementById('main-header');
+        const scrollThreshold = 50;
+        const handleScroll = () => {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.remove('header-solid');
+                header.classList.add('header-glass');
+            } else {
+                header.classList.remove('header-glass');
+                header.classList.add('header-solid');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
