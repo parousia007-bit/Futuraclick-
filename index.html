@@ -8,265 +8,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(29, 78, 216, 0.8) 0%, rgba(30, 64, 175, 0.7) 100%);
-        }
+        .gradient-overlay { background: linear-gradient(135deg, rgba(29, 78, 216, 0.8) 0%, rgba(30, 64, 175, 0.7) 100%); }
         .text-shadow { text-shadow: 2px 2px 4px rgba(0,0,0,0.4); }
         .hover-scale { transition: transform 0.3s ease, box-shadow 0.3s ease; }
-        .hover-scale:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        .social-icon { transition: all 0.3s ease; }
-        .social-icon:hover { transform: scale(1.2); }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335);
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-        }
-        .mobile-menu.open { transform: translateX(0); }
+        .hover-scale:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-gray-900">
-                    Futura<span class="text-blue-600">Click</span>
-                </div>
+                <a href="index.html" class="text-2xl font-bold text-gray-900">Futura<span class="text-blue-600">Click</span></a>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Inicio</a>
-                    <a href="#soluciones" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Soluciones</a>
-                    <a href="#filosofia" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Nuestra Filosofía</a>
-                    <a href="#proyectos" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Proyectos</a>
-                    <a href="#quienes-somos" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Quiénes Somos</a>
-                    <a href="#contacto" class="text-gray-700 hover:text-blue-600 transition-colors font-medium">Contacto</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-700">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-                    </button>
-                </div>
+                    <a href="#soluciones" class="text-gray-700 hover:text-blue-600">Soluciones</a>
+                    </div>
             </div>
         </nav>
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-white shadow-lg md:hidden">
-            <div class="p-6">
-                <button id="close-menu" class="float-right text-gray-700 mb-8"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></button>
-                <div class="clear-both space-y-4">
-                    <a href="#inicio" class="block text-gray-700 hover:text-blue-600">Inicio</a>
-                    <a href="#soluciones" class="block text-gray-700 hover:text-blue-600">Soluciones</a>
-                    <a href="#filosofia" class="block text-gray-700 hover:text-blue-600">Nuestra Filosofía</a>
-                    <a href="#proyectos" class="block text-gray-700 hover:text-blue-600">Proyectos</a>
-                    <a href="#quienes-somos" class="block text-gray-700 hover:text-blue-600">Quiénes Somos</a>
-                    <a href="#contacto" class="block text-gray-700 hover:text-blue-600">Contacto</a>
-                </div>
-            </div>
-        </div>
     </header>
 
-    <section id="inicio" class="relative h-screen flex items-center justify-center bg-blue-700 text-white">
-        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=1974&auto=format&fit=crop');"></div>
-        <div class="gradient-overlay absolute inset-0"></div>
-        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-            <h1 class="text-5xl md:text-7xl font-bold mb-4 text-shadow fade-in">
-                Futura<span class="font-light">Click</span>
-            </h1>
-            <h2 class="text-3xl md:text-5xl font-light mb-6 text-shadow fade-in">
-                La marca que une dos mundos.
-            </h2>
-            <p class="text-xl md:text-2xl font-light mb-12 max-w-3xl mx-auto text-shadow fade-in">
-                Fusionamos consultoría pedagógica con propósito y el desarrollo de tecnología de vanguardia para transformar tu visión. Tu futuro educativo, a un click de distancia.
-            </p>
-            <a href="#soluciones" class="bg-white hover:bg-gray-200 text-blue-700 px-12 py-4 rounded-full text-lg font-medium transition-all hover-scale fade-in">
-                Explora Nuestras Soluciones
-            </a>
-        </div>
-    </section>
+    <main>
+        <section id="inicio" class="relative h-screen flex items-center justify-center bg-blue-700 text-white">
+            <div class="relative z-10 text-center px-6">
+                <h1 class="text-5xl md:text-7xl font-bold">Futura<span class="font-light">Click</span></h1>
+                <h2 class="text-3xl md:text-5xl font-light mt-2">La marca que une dos mundos.</h2>
+                <p class="text-xl mt-6 max-w-3xl mx-auto">Fusionamos consultoría pedagógica y desarrollo tecnológico para transformar tu visión.</p>
+            </div>
+        </section>
 
-    <section id="soluciones" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4 fade-in">Una Solución <span class="font-bold text-blue-600">Completa</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
-                    Integramos una base pedagógica sólida con herramientas tecnológicas de vanguardia para ofrecerte una transformación educativa real.
-                </p>
-            </div>
-            
-            <div class="max-w-6xl mx-auto">
-                <h3 class="text-3xl font-semibold text-gray-800 mb-10 text-center fade-in">Consultoría y Formación Educativa</h3>
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Alineación Cosmovisional</h4>
-                        <p class="text-gray-600">Fortalecemos la base filosófica y pedagógica de tu institución para una educación con propósito.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Acompañamiento Vocacional</h4>
-                        <p class="text-gray-600">Guiamos a estudiantes a descubrir su propósito a través de mentoría especializada y personalizada.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Capacitación de Equipos</h4>
-                        <p class="text-gray-600">Equipamos a padres y educadores con las herramientas y estrategias para una formación integral.</p>
-                    </div>
+        <section id="soluciones" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4">Una Solución <span class="font-bold text-blue-600">Completa</span></h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto">Integramos una base pedagógica sólida con herramientas tecnológicas de vanguardia para una transformación real.</p>
                 </div>
-
-                <h3 class="text-3xl font-semibold text-gray-800 mb-10 text-center fade-in">Tecnología y Desarrollo a la Medida</h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Automatización con Bots</h4>
-                        <p class="text-gray-600">Creamos bots que optimizan el aprendizaje, la tutoría y la gestión administrativa de tu institución.</p>
+                <div class="max-w-6xl mx-auto">
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-10 text-center">Consultoría y Formación Educativa</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <a href="consultoria.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Alineación Cosmovisional</h4><p class="text-gray-600 mt-2">Fortalecemos la base filosófica y pedagógica de tu institución.</p></div></a>
+                        <a href="consultoria.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Acompañamiento Vocacional</h4><p class="text-gray-600 mt-2">Guiamos a estudiantes a descubrir su propósito a través de mentoría.</p></div></a>
+                        <a href="consultoria.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Capacitación de Equipos</h4><p class="text-gray-600 mt-2">Equipamos a padres y educadores con las herramientas para una formación integral.</p></div></a>
                     </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Plataformas Web y Móviles</h4>
-                        <p class="text-gray-600">Construimos el ecosistema digital (webs, apps, aulas virtuales) que tu proyecto necesita para crecer.</p>
-                    </div>
-                    <div class="bg-white p-8 rounded-2xl shadow-lg hover-scale fade-in">
-                        <h4 class="text-xl font-semibold mb-3">Implementación de Herramientas</h4>
-                        <p class="text-gray-600">Te ayudamos a integrar la tecnología correcta para potenciar tu metodología y alcanzar tus metas.</p>
+                    <h3 class="text-3xl font-semibold text-gray-800 mb-10 text-center">Tecnología y Desarrollo a la Medida</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <a href="tecnologia.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Automatización con Bots</h4><p class="text-gray-600 mt-2">Creamos bots que optimizan el aprendizaje, la tutoría y la gestión.</p></div></a>
+                        <a href="tecnologia.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Plataformas Web y Móviles</h4><p class="text-gray-600 mt-2">Construimos el ecosistema digital (webs, apps) que tu proyecto necesita.</p></div></a>
+                        <a href="tecnologia.html" class="block"><div class="bg-white p-8 rounded-2xl shadow-lg hover-scale h-full"><h4>Implementación de Herramientas</h4><p class="text-gray-600 mt-2">Te ayudamos a integrar la tecnología correcta para potenciar tu metodología.</p></div></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="filosofia" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4 fade-in">El ADN de FuturaClick: <span class="font-bold text-blue-600">Una Realidad Integrada</span></h2>
-            </div>
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">No Hay Neutralidad</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Partimos de que Dios es el principio de todo. Las filosofías que separan la fe de la ciencia o la gracia de la naturaleza fragmentan la realidad, creando un ser humano sin unidad en su quehacer. Nuestra misión es reintegrar el conocimiento.
-                    </p>
-                </div>
-                <div class="fade-in">
-                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">El Mandato Cultural</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Creemos que el trabajo, sea cual sea, unifica. Nos llama a hacer cultura partiendo de principios que buscan el florecimiento de la creación. La tecnología no es un fin, sino una herramienta para cumplir este propósito.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="proyectos" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4 fade-in">Proyectos que Integran <span class="font-bold text-blue-600">Visión y Tecnología</span></h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">Nuestra filosofía no es teórica. Así es como se ve en la práctica.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale fade-in">
-                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
-                    <div class="absolute bottom-0 left-0 p-6 text-white">
-                        <h3 class="text-xl font-bold">Plataforma de Acompañamiento Vocacional</h3>
-                        <p class="text-sm opacity-90">Desarrollo Web + Consultoría para el Colegio "Nuevo Horizonte".</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale fade-in">
-                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
-                    <div class="absolute bottom-0 left-0 p-6 text-white">
-                        <h3 class="text-xl font-bold">Bot de Tutoría Bíblica</h3>
-                        <p class="text-sm opacity-90">Desarrollo de Bot + Contenido Pedagógico para "Seminario Digital Interactivo".</p>
-                    </div>
-                </div>
-                <div class="group relative overflow-hidden rounded-xl shadow-lg hover-scale fade-in">
-                    <div class="h-80 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop');"></div>
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-all"></div>
-                    <div class="absolute bottom-0 left-0 p-6 text-white">
-                        <h3 class="text-xl font-bold">Digitalización y Capacitación</h3>
-                        <p class="text-sm opacity-90">Consultoría + Implementación Tecnológica para la Red de Escuelas "Visión Global".</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="quienes-somos" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl md:text-5xl font-light text-gray-900 mb-4 fade-in">Educadores de Corazón, <span class="font-bold text-blue-600">Tecnólogos por Vocación</span></h2>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in">
-                Somos un equipo liderado por una visión única: la creencia de que la verdadera innovación educativa no nace de la tecnología, sino de una filosofía pedagógica coherente. Nuestra pasión por la enseñanza y el propósito nos impulsa a dominar las herramientas digitales para ponerlas al servicio de una educación que transforma, que unifica y que busca el florecimiento humano.
-            </p>
-        </div>
-    </section>
-
-    <section id="contacto" class="py-20 bg-gray-800 text-white">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-light mb-4 fade-in">Inicia tu <span class="font-bold text-blue-400">Transformación Digital</span></h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto fade-in">¿Tienes una idea? ¿Un desafío? Conversemos sobre cómo nuestra visión integrada puede potenciar tu proyecto.</p>
-            </div>
-            <form id="contact-form" class="max-w-xl mx-auto space-y-6 fade-in">
-                <div>
-                    <label for="name" class="block text-sm font-medium mb-2">Nombre Completo</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium mb-2">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                </div>
-                <div>
-                    <label for="project" class="block text-sm font-medium mb-2">Cuéntanos sobre tu proyecto</label>
-                    <textarea id="project" name="project" rows="4" required class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-all hover-scale">
-                    Enviar Mensaje
-                </button>
-            </form>
-        </div>
-    </section>
-
+        </section>
+        
+        </main>
     <footer class="bg-black text-white py-12">
         <div class="container mx-auto px-6 text-center">
-            <div class="text-2xl font-bold mb-4">
-                Futura<span class="text-blue-400">Click</span>
-            </div>
-            <p class="text-gray-400 mb-6 max-w-md mx-auto">La marca que une dos mundos: consultoría pedagógica con propósito y desarrollo de tecnología de vanguardia.</p>
-            <div class="flex justify-center space-x-4 mb-8">
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center social-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-                <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center social-icon"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-            </div>
-            <p class="text-sm text-gray-500">&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
+            <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
         </div>
     </footer>
-
     <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuBtn = document.getElementById('close-menu');
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-            closeMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-            });
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -275,32 +75,6 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-        
-        // Contact form simulation
-        const contactForm = document.getElementById('contact-form');
-        if(contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                const button = this.querySelector('button[type="submit"]');
-                const originalText = button.textContent;
-                button.textContent = 'Enviando...';
-                button.disabled = true;
-                
-                setTimeout(() => {
-                    button.textContent = '¡Mensaje Enviado!';
-                    button.classList.remove('bg-blue-600', 'hover:bg-blue-700');
-                    button.classList.add('bg-green-600');
-                    this.reset();
-                    
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.disabled = false;
-                        button.classList.remove('bg-green-600');
-                        button.classList.add('bg-blue-600', 'hover:bg-blue-700');
-                    }, 3000);
-                }, 1500);
-            });
-        }
     </script>
 </body>
 </html>
