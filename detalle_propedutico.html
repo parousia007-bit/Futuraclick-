@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propedéutico MET - FuturaClick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link { color: #374151; }
+        #main-header.header-solid .brand-text-special { color: #2563EB; }
+        #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        #main-header.header-glass a.nav-link { color: #D1D5DB; }
+        #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="programas.html" class="nav-link transition-colors">Volver a Programas</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Encabezado del Programa -->
+        <section class="relative pt-32 pb-20 bg-gray-800 text-white">
+            <img src="images/programa_propedutico.jpg" alt="Grupo de personas en un taller intensivo" class="absolute inset-0 w-full h-full object-cover opacity-20">
+            <div class="relative container mx-auto px-6 z-10 fade-in">
+                <h1 class="text-4xl md:text-5xl font-extrabold">Propedéutico MET</h1>
+                <p class="text-xl mt-4 max-w-3xl text-blue-300">Un Viaje de Transformación Personal Acelerado.</p>
+            </div>
+        </section>
+
+        <!-- Contenido del Programa -->
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center fade-in">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-lg font-bold text-blue-400">Modalidad</h3>
+                        <p class="text-2xl font-semibold mt-1">En Línea</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-lg font-bold text-blue-400">Duración</h3>
+                        <p class="text-2xl font-semibold mt-1">3 Meses (Intensivo)</p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-lg font-bold text-blue-400">Inversión</h3>
+                        <p class="text-2xl font-semibold mt-1">$3,500 MXN (Pago Único)</p>
+                    </div>
+                </div>
+
+                <div class="space-y-12 fade-in">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">¿A quién está dirigido?</h2>
+                        <p class="text-gray-300 leading-relaxed">
+                            Este curso intensivo está diseñado como un "embudo de conversión" y un punto de entrada acelerado a nuestra filosofía. Es ideal para profesionales, estudiantes y líderes que desean comprender los fundamentos del Modelo Educativo Trascendental y experimentar una transformación personal antes de comprometerse con nuestros programas superiores.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Contenido del Curso</h2>
+                        <ul class="list-disc list-inside text-gray-300 space-y-3 pl-4">
+                            <li><strong class="text-white">Semana 1-4:</strong> Desmantelando Paradigmas: Introducción a la Cosmovisión Integral.</li>
+                            <li><strong class="text-white">Semana 5-8:</strong> El Corazón del MET: Creación, Caída y Redención en la Práctica.</li>
+                            <li><strong class="text-white">Semana 9-12:</strong> Aplicación Inmediata: Un Proyecto de Coherencia Vocacional.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Llamada a la Acción -->
+        <section class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center fade-in">
+                <h2 class="text-3xl font-bold text-white mb-4">Comienza tu Transformación Hoy</h2>
+                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4">
+                    Inscríbete al Propedéutico
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Scripts para efectos visuales (header y fade-in)
+        const header = document.getElementById('main-header');
+        const scrollThreshold = 50;
+        const handleScroll = () => {
+            if (window.scrollY > scrollThreshold) { header.classList.add('header-glass'); header.classList.remove('header-solid'); }
+            else { header.classList.add('header-solid'); header.classList.remove('header-glass'); }
+        };
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

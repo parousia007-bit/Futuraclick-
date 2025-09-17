@@ -14,6 +14,8 @@
         #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
         #main-header.header-glass a.nav-link { color: #D1D5DB; }
         #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -29,17 +31,19 @@
     </header>
 
     <main>
-        <section class="bg-slate-100 text-gray-800 pt-32 pb-20">
+        <!-- Page Header -->
+        <section class="bg-gray-800 text-white pt-32 pb-20">
             <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-5xl font-extrabold">Esfera de Acción: Educación</h1>
-                <p class="text-xl mt-4 max-w-3xl text-gray-600">Construimos la arquitectura del conocimiento para instituciones con propósito.</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold fade-in">Esfera de Acción: Educación</h1>
+                <p class="text-xl mt-4 max-w-3xl text-gray-300 fade-in">Construimos la arquitectura del conocimiento para instituciones con propósito.</p>
             </div>
         </section>
 
+        <!-- Content Section -->
         <section class="py-20">
             <div class="container mx-auto px-6 max-w-4xl">
                 
-                <div class="mb-16">
+                <div class="mb-16 fade-in">
                     <h2 class="text-3xl font-bold text-white mb-4">Desarrollo Curricular Integral</h2>
                     <p class="text-gray-300 leading-relaxed mb-6">
                         Vamos más allá de los planes de estudio estándar. Diseñamos y desarrollamos el ecosistema curricular completo para tu institución, asegurando una coherencia filosófica desde el nivel macro del modelo educativo hasta el detalle micro de cada guía de clase.
@@ -52,7 +56,7 @@
                     </ul>
                 </div>
 
-                <div class="mb-16">
+                <div class="mb-16 fade-in">
                     <h2 class="text-3xl font-bold text-white mb-4">Materiales para una Nueva Generación</h2>
                     <p class="text-gray-300 leading-relaxed">
                         Creamos recursos y materiales didácticos para una variedad de contextos educativos, siempre con el objetivo de formar, no solo de informar. Nuestros materiales están diseñados para ser implementados en:
@@ -64,7 +68,7 @@
                     </ul>
                 </div>
 
-                <div>
+                <div class="fade-in">
                     <h2 class="text-3xl font-bold text-white mb-4">Reorientación Pedagógica</h2>
                     <p class="text-gray-300 leading-relaxed">
                         Para estudiantes e instituciones que provienen de modelos pedagógicos humanistas, ofrecemos un servicio de consultoría único. Analizamos los fundamentos de tu enfoque actual y te guiamos en un proceso de "reorientación", transformando tu base pedagógica hacia un modelo integrado.
@@ -74,10 +78,11 @@
             </div>
         </section>
 
-        <section class="py-20 bg-slate-100">
+        <!-- Call to Action -->
+        <section class="py-20 bg-gray-800">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Listo para construir una base educativa sólida?</h2>
-                <a href="index.html#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4">
+                <h2 class="text-3xl font-bold text-white mb-4 fade-in">¿Listo para construir una base educativa sólida?</h2>
+                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4 fade-in">
                     Contactar para una Asesoría
                 </a>
             </div>
@@ -91,6 +96,7 @@
     </footer>
     
     <script>
+        // Script para el encabezado
         const header = document.getElementById('main-header');
         const scrollThreshold = 50;
         const handleScroll = () => {
@@ -99,6 +105,16 @@
         };
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
+
+        // Script para el efecto fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

@@ -15,22 +15,14 @@
         #main-header.header-solid a.nav-link { color: #374151; }
         #main-header.header-solid a.nav-link:hover { color: #2563EB; }
         #main-header.header-solid .brand-text-special { color: #2563EB; }
-        #main-header.header-solid #hamburger-icon path { stroke: #374151; }
         
         #main-header.header-glass {
-            background-color: rgba(17, 24, 39, 0.8);
+            background-color: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
         }
         #main-header.header-glass a.nav-link { color: #D1D5DB; }
         #main-header.header-glass a.nav-link:hover { color: #FFFFFF; }
         #main-header.header-glass .brand-text-special { color: #60A5FA; }
-        #main-header.header-glass #hamburger-icon path { stroke: #D1D5DB; }
-
-        /* Estilos para el menú móvil */
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            background-color: rgb(241 245 249);
-        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -40,33 +32,22 @@
                 <a href="index.html" class="text-2xl font-bold nav-link">
                     Futura<span class="brand-text-special">Click</span>
                 </a>
-                <!-- Menú para Escritorio -->
-                <div class="hidden md:flex space-x-8">
+                <div class="hidden md:flex space-x-8 items-center">
                     <a href="#esferas" class="nav-link transition-colors">Servicios</a>
                     <a href="programas.html" class="nav-link transition-colors">Programas</a>
                     <a href="alianza.html" class="nav-link transition-colors">Alianza</a>
                     <a href="contacto.html" class="nav-link transition-colors">Contacto</a>
-                </div>
-                <!-- Botón de Hamburguesa para Móvil -->
-                <div class="md:hidden">
-                    <button id="hamburger-button">
-                        <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+                    <!-- ===== NUEVO ENLACE AÑADIDO AQUÍ ===== -->
+                    <a href="portal_alumnos.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors nav-link">
+                        Portal Alumnos
+                    </a>
                 </div>
             </div>
         </nav>
-        <!-- Menú Desplegable para Móvil -->
-        <div id="mobile-menu" class="md:hidden transform -translate-x-full absolute w-full top-full left-0">
-            <a href="#esferas" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Servicios</a>
-            <a href="programas.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Programas</a>
-            <a href="alianza.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Alianza</a>
-            <a href="contacto.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Contacto</a>
-        </div>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="inicio" class="relative h-screen flex items-center justify-center text-white bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop');">
             <div class="text-center px-4">
                 <h1 class="text-5xl md:text-7xl font-extrabold">Futura<span class="text-blue-400">Click</span></h1>
@@ -74,6 +55,7 @@
             </div>
         </section>
 
+        <!-- Intro Section -->
         <section class="py-20 bg-gray-800">
             <div class="container mx-auto px-6 text-center max-w-4xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-white">Somos tu <span class="text-blue-400">Centro de Mando Profesional</span></h2>
@@ -83,77 +65,42 @@
             </div>
         </section>
 
-        <section id="esferas" class="py-20">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestras <span class="text-blue-400">Esferas de Acción</span></h2>
-                    <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Tres áreas de servicio integradas para ofrecerte soluciones completas y coherentes.</p>
+        <!-- Esferas de Acción Section -->
+        <section id="esferas" class="py-20 space-y-24">
+            <!-- Esfera 1: Educación -->
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="md:order-2">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Educación y desarrollo curricular" class="rounded-xl shadow-2xl">
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Tarjeta Educación -->
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
-                        <img src="images/programa_hermeneutica.jpeg" alt="Persona estudiando en una biblioteca" class="rounded-lg mb-6 h-48 w-full object-cover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Educación</h3>
-                        <p class="text-gray-400 mb-6 flex-grow">Desarrollo curricular, materiales didácticos y reorientación pedagógica para instituciones con propósito.</p>
-                        <a href="educacion.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
-                    </div>
-                    <!-- Tarjeta Tecnología -->
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
-                        <img src="images/programa_psicohermeneutica.jpg" alt="Símbolos de psicología y mente" class="rounded-lg mb-6 h-48 w-full object-cover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Tecnología</h3>
-                        <p class="text-gray-400 mb-6 flex-grow">Bots educativos, plataformas web a la medida y desarrollo de aulas virtuales (LMS) para potenciar tu visión.</p>
-                        <a href="tecnologia.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
-                    </div>
-                    <!-- Tarjeta Consultoría -->
-                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
-                        <img src="images/programa_propedutico.jpg" alt="Grupo de personas en un taller intensivo" class="rounded-lg mb-6 h-48 w-full object-cover">
-                        <h3 class="text-2xl font-bold text-white mb-4">Consultoría</h3>
-                        <p class="text-gray-400 mb-6 flex-grow">Asesoría estratégica para integrar tu visión filosófica con la práctica diaria en proyectos educativos y tecnológicos.</p>
-                        <a href="consultoria.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
-                    </div>
+                <div class="md:order-1">
+                    <h2 class="text-3xl font-bold text-white mb-4">Educación</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">Desarrollo de modelos educativos, currículos, mallas curriculares, sílabos y guías de clase. Creamos materiales para colegios, homeschooling e iglesias y ofrecemos reorientación para quienes provienen de modelos pedagógicos humanistas.</p>
+                    <a href="educacion.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
+                </div>
+            </div>
+            <!-- Esfera 2: Tecnología -->
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="images/robot.jpg" alt="Tecnología y desarrollo de bots" class="rounded-xl shadow-2xl">
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Tecnología</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">Desarrollo de bots a la medida para ayuda y entrenamiento escolar, administración de instituciones, gamificación y asistencia psicológica, adaptados a la necesidad profesional de cada proyecto.</p>
+                    <a href="tecnologia.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
+                </div>
+            </div>
+            <!-- Esfera 3: Consultoría -->
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="md:order-2">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" alt="Consultoría y asesoría de proyectos" class="rounded-xl shadow-2xl">
+                </div>
+                <div class="md:order-1">
+                    <h2 class="text-3xl font-bold text-white mb-4">Consultoría</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">Asesoría pedagógica y desarrollo de proyectos para entidades privadas o gubernamentales. Realizamos alineación a currículos existentes o creamos nuevos desde cero con una base filosófica sólida.</p>
+                    <a href="consultoria.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
                 </div>
             </div>
         </section>
-
-        <section id="alianza" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestra <span class="text-blue-400">Alianza Profesional</span></h2>
-                    <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Nuestro equipo está formado por expertos con posgrados y una profunda experiencia en pedagogía, tecnología y administración educativa, comprometidos con tu visión.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <!-- Miembro del Equipo 1 -->
-                    <div>
-                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Mat_futura.png" alt="Retrato de Dra. Leyli Domínguez">
-                        <h3 class="text-xl font-bold text-white mt-4">Dra. Leyli Domínguez</h3>
-                        <p class="text-blue-400">Directora General</p>
-                    </div>
-                    <!-- Miembro del Equipo 2 -->
-                    <div>
-                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Rds_futura.png" alt="Retrato de Coordinadora Académica">
-                        <h3 class="text-xl font-bold text-white mt-4">Coordinadora Académica</h3>
-                        <p class="text-blue-400">Mtra. en Pedagogía</p>
-                    </div>
-                    <!-- Miembro del Equipo 3 -->
-                    <div>
-                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Uriel_futura.png" alt="Retrato de Uriel Domínguez">
-                        <h3 class="text-xl font-bold text-white mt-4">Uriel Domínguez</h3>
-                        <p class="text-blue-400">Líder de Soporte Técnico</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contacto" class="py-20">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white">Iniciemos una <span class="text-blue-400">Conversación</span></h2>
-                <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto mb-8">¿Tienes un proyecto en mente o quieres saber más sobre nuestro enfoque? Contáctanos.</p>
-                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block">
-                    Ir a Contacto
-                </a>
-            </div>
-        </section>
-
     </main>
 
     <footer class="bg-black py-12">
@@ -163,28 +110,14 @@
     </footer>
     
     <script>
-        // Lógica del Header Dinámico
         const header = document.getElementById('main-header');
         const scrollThreshold = 50;
         const handleScroll = () => {
-            if (window.scrollY > scrollThreshold) {
-                header.classList.add('header-glass');
-                header.classList.remove('header-solid');
-            } else {
-                header.classList.add('header-solid');
-                header.classList.remove('header-glass');
-            }
+            if (window.scrollY > scrollThreshold) { header.classList.add('header-glass'); header.classList.remove('header-solid'); }
+            else { header.classList.add('header-solid'); header.classList.remove('header-glass'); }
         };
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
-
-        // Lógica del Menú de Hamburguesa
-        const hamburgerButton = document.getElementById('hamburger-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        hamburgerButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('-translate-x-full');
-        });
     </script>
 </body>
 </html>
-

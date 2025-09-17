@@ -11,10 +11,15 @@
         #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
         #main-header.header-solid a.nav-link { color: #374151; }
         #main-header.header-solid .brand-text-special { color: #2563EB; }
+        #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        #main-header.header-glass a.nav-link { color: #D1D5DB; }
+        #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
-    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out header-solid">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
@@ -26,55 +31,72 @@
     </header>
 
     <main>
-        <section class="bg-slate-100 text-gray-800 pt-32 pb-20">
+        <!-- Page Header -->
+        <section class="bg-gray-800 text-white pt-32 pb-20">
             <div class="container mx-auto px-6">
-                <h1 class="text-4xl md:text-5xl font-extrabold">Catálogo de Bots y Soluciones de IA</h1>
-                <p class="text-xl mt-4 max-w-3xl text-gray-600">Herramientas inteligentes diseñadas para potenciar tu misión educativa y profesional.</p>
+                <h1 class="text-4xl md:text-5xl font-extrabold fade-in">Catálogo de Bots y Soluciones de IA</h1>
+                <p class="text-xl mt-4 max-w-3xl text-gray-300 fade-in">Herramientas inteligentes diseñadas para potenciar tu misión educativa y profesional.</p>
             </div>
         </section>
 
+        <!-- Content Section -->
         <section class="py-20">
-            <div class="container mx-auto px-6 max-w-4xl space-y-12">
-                
+            <div class="container mx-auto px-6 max-w-5xl space-y-24">
+
                 <!-- Bot 1: Asistente Escolar -->
-                <div class="bg-gray-800 p-8 rounded-lg">
-                    <h2 class="text-3xl font-bold text-white mb-3">Bot Asistente Escolar</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Una solución integral para la organización y gestión escolar automatizada. Este bot ayuda a administrar horarios, enviar recordatorios, responder preguntas frecuentes y facilitar la comunicación entre padres, alumnos y docentes, liberando tiempo valioso para el personal administrativo.
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Bot Asistente Escolar</h2>
+                        <p class="text-gray-300 leading-relaxed">
+                            Una solución integral para la gestión escolar automatizada. Este bot ayuda a administrar horarios, enviar recordatorios, responder preguntas frecuentes y facilitar la comunicación entre padres, alumnos y docentes, liberando tiempo valioso para el personal administrativo.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="images/bot_asistente.jpg" alt="Personas colaborando en una oficina" class="rounded-xl shadow-2xl">
+                    </div>
                 </div>
 
                 <!-- Bot 2: Maestro Virtual Híbrido -->
-                <div class="bg-gray-800 p-8 rounded-lg">
-                    <h2 class="text-3xl font-bold text-white mb-3">Maestro Virtual Híbrido</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Un tutor académico potenciado por IA que ofrece apoyo personalizado a los estudiantes. Basado en fuentes confiables y alineado con tu currículo, este bot puede resolver dudas, ofrecer explicaciones detalladas y guiar a los alumnos en su proceso de aprendizaje 24/7.
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                    <div class="md:order-2">
+                        <h2 class="text-3xl font-bold text-white mb-4">Maestro Virtual Híbrido</h2>
+                        <p class="text-gray-300 leading-relaxed">
+                            Un tutor académico potenciado por IA que ofrece apoyo personalizado. Basado en fuentes confiables y alineado con tu currículo, este bot puede resolver dudas, ofrecer explicaciones detalladas y guiar a los alumnos en su proceso de aprendizaje 24/7.
+                        </p>
+                    </div>
+                    <div class="md:order-1">
+                        <img src="images/bot_maestro.jpg" alt="Un aula con un profesor y estudiantes" class="rounded-xl shadow-2xl">
+                    </div>
                 </div>
 
                 <!-- Bot 3: Socio Creativo -->
-                <div class="bg-gray-800 p-8 rounded-lg">
-                    <h2 class="text-3xl font-bold text-white mb-3">Socio Creativo</h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Una herramienta de IA diseñada para ser el compañero ideal en procesos de escritura y creación de contenido. Ayuda a superar el bloqueo del escritor, genera ideas, refina textos y asegura que cada pieza de comunicación sea clara, coherente y poderosa.
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center fade-in">
+                    <div>
+                        <h2 class="text-3xl font-bold text-white mb-4">Socio Creativo</h2>
+                        <p class="text-gray-300 leading-relaxed">
+                           Una herramienta de IA diseñada para ser el compañero ideal en procesos de escritura y creación de contenido. Ayuda a superar el bloqueo del escritor, genera ideas, refina textos y asegura que cada pieza de comunicación sea clara, coherente y poderosa.
+                        </p>
+                    </div>
+                    <div>
+                         <img src="images/bot_creativo.jpg" alt="Una persona trabajando creativamente en una laptop" class="rounded-xl shadow-2xl">
+                    </div>
                 </div>
 
-                 <!-- Bot 4: Otros Bots -->
-                 <div class="bg-gray-800 p-8 rounded-lg">
+                <!-- Bot 4: Soluciones Adicionales -->
+                <div class="bg-gray-800 p-8 rounded-lg text-center fade-in">
                     <h2 class="text-3xl font-bold text-white mb-3">Soluciones Adicionales</h2>
-                    <p class="text-gray-300 leading-relaxed">
+                    <p class="text-gray-300 leading-relaxed max-w-2xl mx-auto">
                         También desarrollamos soluciones especializadas como <strong class="text-blue-400">Futura Publicaciones</strong> para redes sociales, <strong class="text-blue-400">Rifas 'Lael'</strong> para eventos transparentes, y el <strong class="text-blue-400">Bot Inmobiliaria 360</strong> para captura de leads. Cada bot se adapta a las necesidades únicas de tu proyecto.
                     </p>
                 </div>
-
             </div>
         </section>
 
-        <section class="py-20 bg-slate-100">
+        <!-- Call to Action -->
+        <section class="py-20 bg-gray-800">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Interesado en una Demostración?</h2>
-                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4">
+                <h2 class="text-3xl font-bold text-white mb-4 fade-in">¿Interesado en una Demostración?</h2>
+                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4 fade-in">
                     Solicita una Cotización
                 </a>
             </div>
@@ -82,9 +104,30 @@
     </main>
 
     <footer class="bg-black py-12">
-        <div class="container mx-auto px-6 text-center text-gray-400">
+       <div class="container mx-auto px-6 text-center text-gray-400">
             <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
         </div>
     </footer>
+    
+    <script>
+        // Scripts para efectos visuales (header y fade-in)
+        const header = document.getElementById('main-header');
+        const scrollThreshold = 50;
+        const handleScroll = () => {
+            if (window.scrollY > scrollThreshold) { header.classList.add('header-glass'); header.classList.remove('header-solid'); }
+            else { header.classList.add('header-solid'); header.classList.remove('header-glass'); }
+        };
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>

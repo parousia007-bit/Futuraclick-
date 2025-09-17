@@ -9,7 +9,7 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
-        #main-header.header-solid a.nav-link { color: #374151; }
+        #main-header.header-solid a.nav-link, #main-header.header-solid span.nav-link { color: #374151; }
         #main-header.header-solid .brand-text-special { color: #2563EB; }
     </style>
 </head>
@@ -20,7 +20,7 @@
                 <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
                 <div class="hidden md:flex space-x-8 items-center">
                     <span class="nav-link">Bienvenido, Alumno</span>
-                    <a href="portal_alumnos.html" class="nav-link text-red-500 hover:text-red-400 transition-colors">Cerrar Sesión</a>
+                    <a href="portal_alumnos.html" class="nav-link text-red-500 hover:text-red-400 transition-colors font-semibold">Cerrar Sesión</a>
                 </div>
             </div>
         </nav>
@@ -42,15 +42,15 @@
                                 <h3 class="font-bold text-lg text-white">Diplomado en Hermenéutica Integral</h3>
                                 <p class="text-gray-400">Progreso: 60%</p>
                             </div>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Continuar Diplomado</a>
+                            <a href="detalle_hermeneutica.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Continuar Diplomado</a>
                         </div>
                         <!-- Tarjeta de Curso 2 -->
                         <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
                             <div>
-                                <h3 class="font-bold text-lg text-white">Certificación en Psico-Hermenéutica</h3>
+                                <h3 class="font-bold text-lg text-white">Cursos de Psico-Hermenéutica</h3>
                                 <p class="text-gray-400">Progreso: 25%</p>
                             </div>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Iniciar Certificación</a>
+                            <a href="detalle_psicohermeneutica.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Iniciar Curso</a>
                         </div>
                          <!-- Tarjeta de Curso 3 -->
                          <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
@@ -58,7 +58,7 @@
                                 <h3 class="font-bold text-lg text-white">Propedéutico MET</h3>
                                 <p class="text-gray-400">Progreso: 90%</p>
                             </div>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Revisar Contenido</a>
+                            <a href="detalle_propedutico.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Revisar Contenido</a>
                         </div>
                     </div>
                 </div>
@@ -84,7 +84,8 @@
                         <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition-colors">
                             <h3 class="font-bold text-xl text-white">Foro Comunitario</h3>
                             <p class="text-gray-400 my-2">Conéctate, discute y colabora con otros estudiantes.</p>
-                            <a href="#" class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium">Ir al Foro</a>
+                            <!-- ===== VÍNCULO CORREGIDO AQUÍ ===== -->
+                            <a href="foro.html" class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium">Ir al Foro</a>
                         </div>
                     </div>
                 </div>

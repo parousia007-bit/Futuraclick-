@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro Comunitario - FuturaClick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link, #main-header.header-solid span.nav-link { color: #374151; }
+        #main-header.header-solid .brand-text-special { color: #2563EB; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out header-solid">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="dashboard_alumno.html" class="nav-link transition-colors">Volver al Panel</a>
+                    <a href="portal_alumnos.html" class="nav-link text-red-500 hover:text-red-400 transition-colors font-semibold">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+        <div class="container mx-auto px-6 py-8">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-white">Foro Comunitario</h1>
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                    + Nuevo Tema
+                </a>
+            </div>
+
+            <!-- Tabla de Temas del Foro -->
+            <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-gray-700 text-sm text-gray-300 uppercase">
+                        <tr>
+                            <th class="py-3 px-6">Tema</th>
+                            <th class="py-3 px-6 hidden md:table-cell">Respuestas</th>
+                            <th class="py-3 px-6 hidden md:table-cell">Última Actividad</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-700">
+                        <!-- Fila de Tema 1 -->
+                        <tr class="hover:bg-gray-700 transition-colors">
+                            <td class="py-4 px-6">
+                                <a href="#" class="font-bold text-white hover:text-blue-400">Dudas sobre el Módulo 3 de Hermenéutica</a>
+                                <p class="text-sm text-gray-400">Iniciado por: Ana Sofía Pérez</p>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell text-center">
+                                <span class="text-lg font-semibold">12</span>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell">
+                                <p class="text-sm">hace 2 horas</p>
+                                <p class="text-sm text-gray-400">por: Carlos Mendoza</p>
+                            </td>
+                        </tr>
+                        <!-- Fila de Tema 2 -->
+                        <tr class="hover:bg-gray-700 transition-colors">
+                            <td class="py-4 px-6">
+                                <a href="#" class="font-bold text-white hover:text-blue-400">Recursos recomendados para el Propedéutico MET</a>
+                                <p class="text-sm text-gray-400">Iniciado por: Juan Morales</p>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell text-center">
+                                <span class="text-lg font-semibold">5</span>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell">
+                                <p class="text-sm">hace 1 día</p>
+                                <p class="text-sm text-gray-400">por: Laura Jiménez</p>
+                            </td>
+                        </tr>
+                        <!-- Fila de Tema 3 -->
+                        <tr class="hover:bg-gray-700 transition-colors">
+                            <td class="py-4 px-6">
+                                <a href="#" class="font-bold text-white hover:text-blue-400">Debate: Aplicación de la Psico-Hermenéutica en casos de duelo</a>
+                                <p class="text-sm text-gray-400">Iniciado por: Admin</p>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell text-center">
+                                <span class="text-lg font-semibold">34</span>
+                            </td>
+                            <td class="py-4 px-6 hidden md:table-cell">
+                                <p class="text-sm">hace 3 días</p>
+                                <p class="text-sm text-gray-400">por: Ricardo Díaz</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
