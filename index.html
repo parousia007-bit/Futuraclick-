@@ -3,26 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FuturaClick - La Marca que Une Dos Mundos</title>
+    <title>FuturaClick - Unificando el Mundo Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
         #main-header.header-solid {
-            background-color: white;
+            background-color: rgb(241 245 249); /* bg-slate-100 */
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
         #main-header.header-solid a.nav-link { color: #374151; }
         #main-header.header-solid a.nav-link:hover { color: #2563EB; }
         #main-header.header-solid .brand-text-special { color: #2563EB; }
+        #main-header.header-solid #hamburger-icon path { stroke: #374151; }
         
         #main-header.header-glass {
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(17, 24, 39, 0.8);
             backdrop-filter: blur(10px);
         }
         #main-header.header-glass a.nav-link { color: #D1D5DB; }
         #main-header.header-glass a.nav-link:hover { color: #FFFFFF; }
         #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        #main-header.header-glass #hamburger-icon path { stroke: #D1D5DB; }
+
+        /* Estilos para el menú móvil */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            background-color: rgb(241 245 249);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -32,75 +40,151 @@
                 <a href="index.html" class="text-2xl font-bold nav-link">
                     Futura<span class="brand-text-special">Click</span>
                 </a>
+                <!-- Menú para Escritorio -->
                 <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="nav-link transition-colors">Inicio</a>
-                    <a href="#soluciones" class="nav-link transition-colors">Soluciones</a>
-                    <a href="#filosofia" class="nav-link transition-colors">Filosofía</a>
-                    <a href="#proyectos" class="nav-link transition-colors">Proyectos</a>
+                    <a href="#esferas" class="nav-link transition-colors">Servicios</a>
+                    <a href="programas.html" class="nav-link transition-colors">Programas</a>
+                    <a href="alianza.html" class="nav-link transition-colors">Alianza</a>
+                    <a href="contacto.html" class="nav-link transition-colors">Contacto</a>
+                </div>
+                <!-- Botón de Hamburguesa para Móvil -->
+                <div class="md:hidden">
+                    <button id="hamburger-button">
+                        <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>
+        <!-- Menú Desplegable para Móvil -->
+        <div id="mobile-menu" class="md:hidden transform -translate-x-full absolute w-full top-full left-0">
+            <a href="#esferas" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Servicios</a>
+            <a href="programas.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Programas</a>
+            <a href="alianza.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Alianza</a>
+            <a href="contacto.html" class="block text-gray-800 hover:bg-slate-200 py-3 px-6">Contacto</a>
+        </div>
     </header>
 
     <main>
-        <section id="inicio" class="relative h-screen flex items-center justify-center text-white bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.6), rgba(17, 24, 39, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c7da?q=80&w=2070&auto=format&fit=crop');">
-            <div class="text-center px-6">
-                <h1 class="text-5xl md:text-7xl font-extrabold">Futura<span class="font-light">Click</span></h1>
-                <h2 class="text-3xl md:text-5xl font-light mt-2">La marca que une dos mundos.</h2>
-                <p class="text-xl mt-6 max-w-3xl mx-auto text-gray-300">Fusionamos consultoría pedagógica y desarrollo tecnológico para transformar tu visión.</p>
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-white bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.7), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1449844908441-8829872d2607?q=80&w=2070&auto=format&fit=crop');">
+            <div class="text-center px-4">
+                <h1 class="text-5xl md:text-7xl font-extrabold">Futura<span class="text-blue-400">Click</span></h1>
+                <h2 class="text-2xl md:text-4xl font-light mt-4 text-blue-300">La marca que unifica el mundo profesional.</h2>
             </div>
         </section>
 
-        <section id="soluciones" class="py-20">
+        <section class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Somos tu <span class="text-blue-400">Centro de Mando Profesional</span></h2>
+                <p class="text-xl text-gray-300 mt-4 leading-relaxed">
+                    Te ayudamos a desarrollar proyectos de alto valor e impacto cultural, conectándote con una comunidad de profesionistas que, como tú, buscan la excelencia basados en una misma fe y visión.
+                </p>
+            </div>
+        </section>
+
+        <section id="esferas" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-white">Una Solución <span class="text-blue-400">Completa</span></h2>
-                    <p class="text-xl text-gray-400 mt-4 max-w-3xl mx-auto">Integramos una base pedagógica sólida con herramientas de vanguardia para una transformación real.</p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestras <span class="text-blue-400">Esferas de Acción</span></h2>
+                    <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Tres áreas de servicio integradas para ofrecerte soluciones completas y coherentes.</p>
                 </div>
-                <div class="max-w-6xl mx-auto">
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <a href="consultoria.html" class="block bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-blue-400/20 transition-all duration-300 hover:-translate-y-2">
-                            <div class="text-blue-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
-                            <h3 class="text-xl font-bold text-white mb-3">Alineación Cosmovisional</h3>
-                            <p class="text-gray-400">Fortalecemos la base filosófica y pedagógica de tu institución.</p>
-                        </a>
-                        <a href="tecnologia.html" class="block bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-blue-400/20 transition-all duration-300 hover:-translate-y-2">
-                            <div class="text-blue-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
-                            <h3 class="text-xl font-bold text-white mb-3">Automatización con Bots</h3>
-                            <p class="text-gray-400">Creamos bots que optimizan el aprendizaje, la tutoría y la gestión.</p>
-                        </a>
-                        <a href="tecnologia.html" class="block bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-blue-400/20 transition-all duration-300 hover:-translate-y-2">
-                            <div class="text-blue-400 mb-4"><svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div>
-                            <h3 class="text-xl font-bold text-white mb-3">Plataformas Web y Móviles</h3>
-                            <p class="text-gray-400">Construimos el ecosistema digital (webs, apps) que tu proyecto necesita.</p>
-                        </a>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Tarjeta Educación -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
+                        <img src="images/programa_hermeneutica.jpeg" alt="Persona estudiando en una biblioteca" class="rounded-lg mb-6 h-48 w-full object-cover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Educación</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">Desarrollo curricular, materiales didácticos y reorientación pedagógica para instituciones con propósito.</p>
+                        <a href="educacion.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
+                    </div>
+                    <!-- Tarjeta Tecnología -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
+                        <img src="images/programa_psicohermeneutica.jpg" alt="Símbolos de psicología y mente" class="rounded-lg mb-6 h-48 w-full object-cover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Tecnología</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">Bots educativos, plataformas web a la medida y desarrollo de aulas virtuales (LMS) para potenciar tu visión.</p>
+                        <a href="tecnologia.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
+                    </div>
+                    <!-- Tarjeta Consultoría -->
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg text-center flex flex-col">
+                        <img src="images/programa_propedutico.jpg" alt="Grupo de personas en un taller intensivo" class="rounded-lg mb-6 h-48 w-full object-cover">
+                        <h3 class="text-2xl font-bold text-white mb-4">Consultoría</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">Asesoría estratégica para integrar tu visión filosófica con la práctica diaria en proyectos educativos y tecnológicos.</p>
+                        <a href="consultoria.html" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition-colors">Saber Más</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        </main>
+        <section id="alianza" class="py-20 bg-gray-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Nuestra <span class="text-blue-400">Alianza Profesional</span></h2>
+                    <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">Nuestro equipo está formado por expertos con posgrados y una profunda experiencia en pedagogía, tecnología y administración educativa, comprometidos con tu visión.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+                    <!-- Miembro del Equipo 1 -->
+                    <div>
+                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Mat_futura.png" alt="Retrato de Dra. Leyli Domínguez">
+                        <h3 class="text-xl font-bold text-white mt-4">Dra. Leyli Domínguez</h3>
+                        <p class="text-blue-400">Directora General</p>
+                    </div>
+                    <!-- Miembro del Equipo 2 -->
+                    <div>
+                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Rds_futura.png" alt="Retrato de Coordinadora Académica">
+                        <h3 class="text-xl font-bold text-white mt-4">Coordinadora Académica</h3>
+                        <p class="text-blue-400">Mtra. en Pedagogía</p>
+                    </div>
+                    <!-- Miembro del Equipo 3 -->
+                    <div>
+                        <img class="w-40 h-40 mx-auto rounded-full object-cover border-4 border-gray-700" src="images/Uriel_futura.png" alt="Retrato de Uriel Domínguez">
+                        <h3 class="text-xl font-bold text-white mt-4">Uriel Domínguez</h3>
+                        <p class="text-blue-400">Líder de Soporte Técnico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Iniciemos una <span class="text-blue-400">Conversación</span></h2>
+                <p class="text-xl text-gray-300 mt-4 max-w-3xl mx-auto mb-8">¿Tienes un proyecto en mente o quieres saber más sobre nuestro enfoque? Contáctanos.</p>
+                <a href="contacto.html" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block">
+                    Ir a Contacto
+                </a>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="bg-black py-12">
         <div class="container mx-auto px-6 text-center text-gray-400">
             <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    
     <script>
+        // Lógica del Header Dinámico
         const header = document.getElementById('main-header');
         const scrollThreshold = 50;
         const handleScroll = () => {
             if (window.scrollY > scrollThreshold) {
-                header.classList.remove('header-solid');
                 header.classList.add('header-glass');
+                header.classList.remove('header-solid');
             } else {
-                header.classList.remove('header-glass');
                 header.classList.add('header-solid');
+                header.classList.remove('header-glass');
             }
         };
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
+
+        // Lógica del Menú de Hamburguesa
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('-translate-x-full');
+        });
     </script>
 </body>
 </html>
+
