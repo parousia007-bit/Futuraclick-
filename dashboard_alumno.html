@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard del Alumno - FuturaClick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link { color: #374151; }
+        #main-header.header-solid .brand-text-special { color: #2563EB; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out header-solid">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <span class="nav-link">Bienvenido, Alumno</span>
+                    <a href="portal_alumnos.html" class="nav-link text-red-500 hover:text-red-400 transition-colors">Cerrar Sesión</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="pt-24">
+        <div class="container mx-auto px-6 py-8">
+            <h1 class="text-3xl font-bold text-white mb-8">Panel de Control del Alumno</h1>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Columna Principal (Cursos) -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl font-semibold text-white mb-4">Mis Cursos y Diplomados</h2>
+                    <div class="space-y-4">
+                        <!-- Tarjeta de Curso 1 -->
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Diplomado en Hermenéutica Integral</h3>
+                                <p class="text-gray-400">Progreso: 60%</p>
+                            </div>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Continuar Diplomado</a>
+                        </div>
+                        <!-- Tarjeta de Curso 2 -->
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Certificación en Psico-Hermenéutica</h3>
+                                <p class="text-gray-400">Progreso: 25%</p>
+                            </div>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Iniciar Certificación</a>
+                        </div>
+                         <!-- Tarjeta de Curso 3 -->
+                         <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between hover:bg-gray-700 transition-colors">
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Propedéutico MET</h3>
+                                <p class="text-gray-400">Progreso: 90%</p>
+                            </div>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-sm">Revisar Contenido</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Lateral (Anuncios y Foro) -->
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-white mb-4">Anuncios Recientes</h2>
+                        <div class="bg-gray-800 p-4 rounded-lg space-y-3">
+                            <div class="border-b border-gray-700 pb-2">
+                                <h4 class="font-bold text-white">Nuevas fechas de examen</h4>
+                                <p class="text-sm text-gray-400">Se han publicado las fechas para los exámenes finales del semestre.</p>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white">Mantenimiento de la plataforma</h4>
+                                <p class="text-sm text-gray-400">El próximo domingo habrá un breve mantenimiento programado.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-semibold text-white mb-4">Comunidad</h2>
+                        <div class="bg-gray-800 p-6 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                            <h3 class="font-bold text-xl text-white">Foro Comunitario</h3>
+                            <p class="text-gray-400 my-2">Conéctate, discute y colabora con otros estudiantes.</p>
+                            <a href="#" class="mt-4 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium">Ir al Foro</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black py-6 mt-16">
+        <div class="container mx-auto px-6 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
+

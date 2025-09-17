@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esfera de Educación - FuturaClick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link { color: #374151; }
+        #main-header.header-solid .brand-text-special { color: #2563EB; }
+        #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        #main-header.header-glass a.nav-link { color: #D1D5DB; }
+        #main-header.header-glass .brand-text-special { color: #60A5FA; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+    <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#esferas" class="nav-link transition-colors">Volver a Servicios</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="bg-slate-100 text-gray-800 pt-32 pb-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-extrabold">Esfera de Acción: Educación</h1>
+                <p class="text-xl mt-4 max-w-3xl text-gray-600">Construimos la arquitectura del conocimiento para instituciones con propósito.</p>
+            </div>
+        </section>
+
+        <section class="py-20">
+            <div class="container mx-auto px-6 max-w-4xl">
+                
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Desarrollo Curricular Integral</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Vamos más allá de los planes de estudio estándar. Diseñamos y desarrollamos el ecosistema curricular completo para tu institución, asegurando una coherencia filosófica desde el nivel macro del modelo educativo hasta el detalle micro de cada guía de clase.
+                    </p>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-6 text-lg">
+                        <li class="bg-gray-800 p-4 rounded-lg flex items-center"><span class="text-blue-400 mr-3">✓</span> Modelos Educativos</li>
+                        <li class="bg-gray-800 p-4 rounded-lg flex items-center"><span class="text-blue-400 mr-3">✓</span> Mallas Curriculares</li>
+                        <li class="bg-gray-800 p-4 rounded-lg flex items-center"><span class="text-blue-400 mr-3">✓</span> Sílabos por Materia</li>
+                        <li class="bg-gray-800 p-4 rounded-lg flex items-center"><span class="text-blue-400 mr-3">✓</span> Guías de Clase Detalladas</li>
+                    </ul>
+                </div>
+
+                <div class="mb-16">
+                    <h2 class="text-3xl font-bold text-white mb-4">Materiales para una Nueva Generación</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Creamos recursos y materiales didácticos para una variedad de contextos educativos, siempre con el objetivo de formar, no solo de informar. Nuestros materiales están diseñados para ser implementados en:
+                    </p>
+                    <ul class="mt-6 space-y-4">
+                        <li><strong class="text-blue-400">Colegios y Escuelas:</strong> Recursos que se integran y potencian tu plan de estudios existente.</li>
+                        <li><strong class="text-blue-400">Homeschooling:</strong> Guías completas para padres que buscan una educación en casa con profundidad y coherencia.</li>
+                        <li><strong class="text-blue-400">Iglesias:</strong> Materiales para escuelas dominicales y programas de formación que van más allá de la repetición.</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-white mb-4">Reorientación Pedagógica</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Para estudiantes e instituciones que provienen de modelos pedagógicos humanistas, ofrecemos un servicio de consultoría único. Analizamos los fundamentos de tu enfoque actual y te guiamos en un proceso de "reorientación", transformando tu base pedagógica hacia un modelo integrado.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="py-20 bg-slate-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">¿Listo para construir una base educativa sólida?</h2>
+                <a href="index.html#contacto" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full text-lg font-medium transition-colors inline-block mt-4">
+                    Contactar para una Asesoría
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black py-12">
+       <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 FuturaClick. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const header = document.getElementById('main-header');
+        const scrollThreshold = 50;
+        const handleScroll = () => {
+            if (window.scrollY > scrollThreshold) { header.classList.add('header-glass'); header.classList.remove('header-solid'); }
+            else { header.classList.add('header-solid'); header.classList.remove('header-glass'); }
+        };
+        window.addEventListener('scroll', handleScroll);
+        document.addEventListener('DOMContentLoaded', handleScroll);
+    </script>
+</body>
+</html>
