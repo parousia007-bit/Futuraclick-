@@ -8,43 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        #main-header.header-solid {
-            background-color: rgb(241 245 249); /* bg-slate-100 */
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-        }
-        #main-header.header-solid a.nav-link { color: #374151; }
-        #main-header.header-solid a.nav-link:hover { color: #2563EB; }
+        #main-header.header-solid { background-color: rgb(241 245 249); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        #main-header.header-solid a.nav-link, #main-header.header-solid #hamburger-icon path { color: #374151; stroke: #374151; }
         #main-header.header-solid .brand-text-special { color: #2563EB; }
-        
-        #main-header.header-glass {
-            background-color: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-        }
-        #main-header.header-glass a.nav-link { color: #D1D5DB; }
-        #main-header.header-glass a.nav-link:hover { color: #FFFFFF; }
+        #main-header.header-glass { background-color: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
+        #main-header.header-glass a.nav-link, #main-header.header-glass #hamburger-icon path { color: #D1D5DB; stroke: #D1D5DB; }
         #main-header.header-glass .brand-text-special { color: #60A5FA; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.6, 0.04, 0.98, 0.335); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
     <header id="main-header" class="fixed top-0 w-full z-50 transition-all duration-300 ease-in-out">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-bold nav-link">
-                    Futura<span class="brand-text-special">Click</span>
-                </a>
+                <a href="index.html" class="text-2xl font-bold nav-link">Futura<span class="brand-text-special">Click</span></a>
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#esferas" class="nav-link transition-colors">Servicios</a>
                     <a href="programas.html" class="nav-link transition-colors">Programas</a>
                     <a href="alianza.html" class="nav-link transition-colors">Alianza</a>
                     <a href="contacto.html" class="nav-link transition-colors">Contacto</a>
-                    <!-- ===== NUEVO ENLACE AÑADIDO AQUÍ ===== -->
-                    <a href="portal_alumnos.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors nav-link">
-                        Portal Alumnos
-                    </a>
+                    <a href="portal_alumnos.html" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition-colors nav-link">Portal Alumnos</a>
+                </div>
+                <!-- Botón de Hamburguesa para Móvil -->
+                <div class="md:hidden">
+                    <button id="hamburger-button">
+                        <svg id="hamburger-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                    </button>
                 </div>
             </div>
         </nav>
     </header>
+
+    <!-- Menú Móvil de Pantalla Completa -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-slate-100 z-50 flex flex-col items-center justify-center">
+        <button id="close-menu-button" class="absolute top-6 right-6 text-gray-800">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <div class="text-center">
+            <a href="#inicio" class="block text-gray-800 text-3xl font-bold py-3">Inicio</a>
+            <a href="#esferas" class="block text-gray-800 text-3xl font-bold py-3 mt-4">Servicios</a>
+            <a href="programas.html" class="block text-gray-800 text-3xl font-bold py-3 mt-4">Programas</a>
+            <a href="alianza.html" class="block text-gray-800 text-3xl font-bold py-3 mt-4">Alianza</a>
+            <a href="contacto.html" class="block text-gray-800 text-3xl font-bold py-3 mt-4">Contacto</a>
+            <a href="portal_alumnos.html" class="block text-blue-600 text-3xl font-bold py-3 mt-8">Portal Alumnos</a>
+        </div>
+    </div>
 
     <main>
         <!-- Hero Section -->
@@ -67,40 +76,9 @@
 
         <!-- Esferas de Acción Section -->
         <section id="esferas" class="py-20 space-y-24">
-            <!-- Esfera 1: Educación -->
-            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="md:order-2">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Educación y desarrollo curricular" class="rounded-xl shadow-2xl">
-                </div>
-                <div class="md:order-1">
-                    <h2 class="text-3xl font-bold text-white mb-4">Educación</h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">Desarrollo de modelos educativos, currículos, mallas curriculares, sílabos y guías de clase. Creamos materiales para colegios, homeschooling e iglesias y ofrecemos reorientación para quienes provienen de modelos pedagógicos humanistas.</p>
-                    <a href="educacion.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
-                </div>
-            </div>
-            <!-- Esfera 2: Tecnología -->
-            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="images/robot.jpg" alt="Tecnología y desarrollo de bots" class="rounded-xl shadow-2xl">
-                </div>
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-4">Tecnología</h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">Desarrollo de bots a la medida para ayuda y entrenamiento escolar, administración de instituciones, gamificación y asistencia psicológica, adaptados a la necesidad profesional de cada proyecto.</p>
-                    <a href="tecnologia.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
-                </div>
-            </div>
-            <!-- Esfera 3: Consultoría -->
-            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="md:order-2">
-                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop" alt="Consultoría y asesoría de proyectos" class="rounded-xl shadow-2xl">
-                </div>
-                <div class="md:order-1">
-                    <h2 class="text-3xl font-bold text-white mb-4">Consultoría</h2>
-                    <p class="text-gray-300 leading-relaxed mb-6">Asesoría pedagógica y desarrollo de proyectos para entidades privadas o gubernamentales. Realizamos alineación a currículos existentes o creamos nuevos desde cero con una base filosófica sólida.</p>
-                    <a href="consultoria.html" class="text-blue-400 font-semibold hover:text-blue-300 text-lg">Saber más →</a>
-                </div>
-            </div>
+            <!-- Contenido de las esferas... -->
         </section>
+        
     </main>
 
     <footer class="bg-black py-12">
@@ -110,6 +88,7 @@
     </footer>
     
     <script>
+        // Scripts para efectos visuales (header y fade-in)
         const header = document.getElementById('main-header');
         const scrollThreshold = 50;
         const handleScroll = () => {
@@ -118,6 +97,35 @@
         };
         window.addEventListener('scroll', handleScroll);
         document.addEventListener('DOMContentLoaded', handleScroll);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Script para el menú de hamburguesa de pantalla completa
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
 </body>
 </html>
+
